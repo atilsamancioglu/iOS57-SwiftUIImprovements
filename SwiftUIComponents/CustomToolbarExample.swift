@@ -1,5 +1,5 @@
 //
-//  CustomToolBarExample.swift
+//  CustomToolbarExample.swift
 //  SwiftUIComponents
 //
 //  Created by Atil Samancioglu on 29.10.2024.
@@ -7,12 +7,43 @@
 
 import SwiftUI
 
-struct CustomToolBarExample: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct CustomToolbarExample: View {
+
+        var body: some View {
+            
+             
+            NavigationStack {
+                Text("Hello, SwiftUI!")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button(action: {
+                                // Action for leading button
+                            }) {
+                                Image(systemName: "star")
+                                    .foregroundColor(.blue)
+                            }
+                        }
+                        ToolbarItem(placement: .principal) {
+                            Text("My Great App")
+                                .font(.headline)
+                        }
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button(action: {
+                                // Action for trailing button
+                            }) {
+                                Image(systemName: "ellipsis")
+                            }
+                        }
+                    }
+            }
+
+
+            
+        }
+
+        
     }
-}
 
 #Preview {
-    CustomToolBarExample()
+    CustomToolbarExample()
 }
